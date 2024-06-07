@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/go-chi/chi"
 	"github.com/joho/godotenv"
 )
 
@@ -17,5 +18,8 @@ func main(){
 	if portString == ""{
 		log.Fatal("PORT is not found in the environment")
 	}
+
+	router := chi.NewRouter()
+
 	fmt.Println("Port:",portString)
 }
